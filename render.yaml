@@ -1,0 +1,13 @@
+services:
+  - name: n8n
+    type: web
+    envVars:
+      - key: N8N_HOST
+        value: "0.0.0.0"
+      - key: N8N_DB_TYPE
+        value: "postgresdb"
+      - key: N8N_DB_POSTGRESDB_URL
+        value: "$DATABASE_URL"
+    dockerfilePath: Dockerfile
+    httpPort: 5678
+    healthCheckPath: /healthz
